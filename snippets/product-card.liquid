@@ -1,0 +1,18 @@
+{% assign discount = product.compare_at_price | minus: product.price %}
+{% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price %}
+
+<div class="product-card">
+  <div class="product-card__image">
+    {{ product.featured_image |  image_url: width: 400 |  image_tag }}
+  </div>
+  <div class="product-card__content">
+    <span class="product-card__title">{{ product.title |  capitalize }}</span>
+    <div class="product-card__prices">
+      <span class="product-card__price">{{ product.price | money }}</span>
+      <span class="product-card__compare-at-price">{{ product.compare_at_price | money }}</span>
+      {% if product.compare_at_price != blank %}
+        <span class="product-card__discount-percent">-{{ discount_percent }}%</span>
+      {% endif %}
+    </div>
+  </div>
+</div>

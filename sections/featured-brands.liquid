@@ -1,0 +1,63 @@
+{{ "featured-brands.css" |  asset_url | stylesheet_tag }}
+
+
+<div class="featured-brands">
+  <div class="page-width featured-brands__wrapper">
+    {% for block in section.blocks %}
+      <div class="brand-image">
+        {{ block.settings.brand |  image_url: width: 300  |  image_tag }}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .featured-brands{
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .brand-image{
+    width:{{ section.settings.brand_width }}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Featured brands",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "range",
+      "id": "brand_width",
+      "label": "Brand width",
+      "min": 50,
+      "max": 500,
+      "step": 10,
+      "default": 300
+    }
+  ],
+  "blocks": [
+    {
+      "type":"brand",
+      "name":"Brand",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand",
+          "label": "Brand image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured brands"
+    }
+  ]
+}
+{% endschema %}

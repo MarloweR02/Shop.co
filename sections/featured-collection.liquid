@@ -1,0 +1,56 @@
+{{ "featured-collection.css" |  asset_url |  stylesheet_tag }}
+
+<div class="featured-collection">
+  <div class="page-width featured-collection__wrapper">
+    <div class="featured-collection__header">
+      {% if section.settings.header_title != blank %}
+        <h2>{{ section.settings.header_title }}</h2>
+      {% endif %}
+      {% if section.settings.header_description != blank %}
+        <p>{{ section.settings.header_description }}</p>
+      {% endif %}
+    </div>
+    <div class="featured-collection__body">
+      {% for product in section.settings.featured_collection.products %}
+        {% render "product-card" product:product %}
+      {% endfor %}
+    </div>
+    <a href="">
+      <button></button>
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "header_title",
+      "label": "Header title",
+      "default":"New Arrivals"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "header_description",
+      "label": "Header description",
+      "default":"Check out featured collection"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Featured collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection"
+    }
+  ]
+}
+{% endschema %}

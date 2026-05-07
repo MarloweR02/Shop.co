@@ -1,0 +1,61 @@
+{{ "header.css" |  asset_url |  stylesheet_tag }}
+
+<header class="header">
+  <div class="header__inner page-width">
+    {% if settings.logo != blank %}
+      <div class="header__logo">
+        {{ settings.logo | image_url: width: 300 | image_tag }}
+      </div>
+    {% else %}
+      <h2>{{ shop.name }}</h2>  
+    {% endif %}
+    <ul class="header__nav">
+      {% for link in section.settings.header_menu.links %}
+        {% if link.links != blank %}
+          <li class="header__nav-item">{{ link.title }}
+            <div class="nav-item__child-icon">
+              {{ "icon-chevron-up.svg" | inline_asset_content }}
+            </div>
+          </li>
+        {% else %}
+          <li class="header__nav-item"><a href="{{ link.url }}">{{ link.title }}</a></li>    
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="header__search-bar">
+      <input type="text" class="header__search-bar__input" placeholder="Search for products...">
+      <div class="header__search-bar__icon">
+        {{ "icon-magnifying-glass.svg" | inline_asset_content }}
+      </div>
+    </div>
+    <div class="header__icons">
+      <div class="svg-wrapper">
+        {{ "icon-shopping-cart.svg" | inline_asset_content }}
+      </div>
+      <div class="svg-wrapper">
+        {{ "icon-user.svg" | inline_asset_content }}
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  
+  .header__logo{
+    width: {{ settings.logo_width }}px;
+    height: auto;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "header_menu",
+      "label": "Header menu"
+    }
+  ]
+}
+{% endschema %}

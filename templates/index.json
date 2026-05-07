@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "hero_image": "shopify://shop_images/Rectangle_2.png",
+        "hero_title": "Skeleton Theme",
+        "hero_description": "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.",
+        "btn_title": "Shop now",
+        "bg_color": "#f4f4f4"
+      }
+    },
+    "featured_brands_dmPQq3": {
+      "type": "featured-brands",
+      "blocks": {
+        "brand_wRiiqg": {
+          "type": "brand",
+          "settings": {
+            "brand": "shopify://shop_images/prada-logo-1_1.svg"
+          }
+        },
+        "brand_ihiVCF": {
+          "type": "brand",
+          "settings": {
+            "brand": "shopify://shop_images/gucci-logo-1_1.svg"
+          }
+        },
+        "brand_yacnty": {
+          "type": "brand",
+          "settings": {
+            "brand": "shopify://shop_images/Group_1.svg"
+          }
+        },
+        "brand_CiwrwU": {
+          "type": "brand",
+          "settings": {
+            "brand": "shopify://shop_images/zara-logo-1_1.svg"
+          }
+        },
+        "brand_fBAaCk": {
+          "type": "brand",
+          "settings": {
+            "brand": "shopify://shop_images/Group_2.svg"
+          }
+        }
+      },
+      "block_order": [
+        "brand_wRiiqg",
+        "brand_ihiVCF",
+        "brand_yacnty",
+        "brand_CiwrwU",
+        "brand_fBAaCk"
+      ],
+      "name": "Featured brands",
+      "settings": {
+        "bg_color": "#000000",
+        "brand_width": 300
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_brands_dmPQq3"
+  ]
+}

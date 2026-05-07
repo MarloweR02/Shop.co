@@ -1,0 +1,70 @@
+{{ "hero.css" |  asset_url |  stylesheet_tag }}
+
+
+<div class="hero">
+  <div class="page-width hero__wrapper">
+    <div class="hero__contents">
+      <h1 class="hero__content-title">{{ section.settings.hero_title }}</h1>
+      <p class="hero__content-description">{{ section.settings.hero_description }}</p>
+      <button class="hero__content-button">{{ section.settings.btn_title }}</button>
+    </div>
+    <div class="hero__image-container">
+      {{ section.settings.hero_image |  image_url: width: 700 | image_tag }}
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero{
+    background-color: {{ section.settings.bg_color }};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "header",
+      "content": "Hero contents"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero title",
+      "default":"Find clothes that matchers your style"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "hero_description",
+      "label": "Hero description",
+      "default":"Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style."
+    },
+    {
+      "type": "text",
+      "id": "btn_title",
+      "label": "Button title",
+      "default":"Shop now"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

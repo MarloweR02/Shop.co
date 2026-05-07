@@ -1,0 +1,19 @@
+.featured-brands{
+  padding: 1rem;
+}
+
+.featured-brands__wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.brand-image{
+  height: auto;
+}
+.brand-image > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

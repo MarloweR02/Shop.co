@@ -1,0 +1,54 @@
+{{ "announcement-bar.css" |  asset_url |  stylesheet_tag }}
+
+<announcement-bar class="announcement-bar">
+  <div class="page-width announcement-bar__wrapper">
+    <div class="announcement">{{ section.settings.announcement }}</div>
+    <div class="svg-wrapper announcement-x">
+      {{ "icon-x-mark.svg" | inline_asset_content}}
+    </div>
+  </div>
+</announcement-bar>
+
+<style>
+  .announcement-bar{
+    background-color: {{ section.settings.bg_color }};
+  }
+
+  .announcement{
+    color: {{ section.settings.text_color }};
+  }
+
+  .announcement-x > svg{
+    color: {{ section.settings.text_color }};
+
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "announcement",
+      "label": "Announcement text",
+      "default":"Sign up to get 20% off to your 1st order"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}
