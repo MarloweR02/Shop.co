@@ -25,3 +25,20 @@
   flex-direction: column;
   gap: 4rem;
 }
+
+.featured-collection__view-all{
+  border: 1px solid black;
+  border-radius: 100px;
+  padding: 1.2rem 4rem;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+.featured-collection__view-all:hover{
+  background-color: black;
+  color: white;
+}
+
+.featured-collection__view-all__link{
+  align-self: center;
+}
